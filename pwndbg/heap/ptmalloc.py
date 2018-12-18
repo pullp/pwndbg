@@ -339,7 +339,7 @@ class Heap(pwndbg.heap.heap.BaseHeap):
 
 
     def get_heap(self,addr):
-        return pwndbg.memory.poi(self.heap_info,heap_for_ptr(addr))
+        return pwndbg.memory.poi(self.heap_info, heap_for_ptr(addr))
 
 
     def get_arena(self, arena_addr=None):
