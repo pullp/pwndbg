@@ -280,8 +280,8 @@ def malloc_chunk(addr,fake=False):
         header += message.hint(' IS_MMAPED')
     if non_main_arena:
         header += message.hint(' NON_MAIN_ARENA')
-    print(header, chunk["value"])
-
+    print(header, end=' ')
+    gdb.execute("p/x *(struct malloc_chunk *) 0x%x"%addr)
     return chunk
 
 
