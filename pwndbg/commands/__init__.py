@@ -26,7 +26,6 @@ commands = []
 def list_current_commands():
     current_pagination = gdb.execute('show pagination', to_string=True)
     current_pagination = current_pagination.split()[-1].rstrip('.')  # Take last word and skip period
-
     gdb.execute('set pagination off')
     command_list = gdb.execute('help all', to_string=True).strip().split('\n')
     existing_commands = set()
@@ -46,7 +45,7 @@ class Command(gdb.Command):
     """Generic command wrapper"""
     command_names = set()
     builtin_override_whitelist = {'up', 'down', 'search', 'pwd', 'start'}
-    history = {}
+    history = []
 
     def __init__(self, function, prefix=False, command_name=None):
         if command_name is None:
@@ -121,8 +120,11 @@ class Command(gdb.Command):
             return False
 
         # A new command was entered by the user
-        if number not in Command.history:
-            Command.history[number] = command
+        if command not in Command.history:
+            if(command.startswith("rep")):
+                return True
+            print("add %s to history"%(command))
+            Command.history.append(command)
             return False
 
         # Somehow the command is different than we got before?

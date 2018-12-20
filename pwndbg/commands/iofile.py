@@ -20,7 +20,6 @@ from pwndbg.color import message
 from pwndbg.memory import readtype
 
 
-print("in iofile.py")
 @pwndbg.commands.ParsedCommand
 @pwndbg.commands.OnlyWhenRunning
 def io_file(addr=None):
@@ -29,8 +28,8 @@ def io_file(addr=None):
     """
     if addr == None:
         print("Prints out the IO_FILE_plus at the specified address")
+        return
     addr = int(addr)
-    print(addr)
     gdb.execute("p/x *(struct _IO_FILE_plus *) %d"%(addr))
 
 @pwndbg.commands.ParsedCommand
