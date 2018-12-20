@@ -82,6 +82,7 @@ import pwndbg.wrappers
 import pwndbg.wrappers.checksec
 import pwndbg.wrappers.readelf
 import pwndbg.commands.iofile
+import pwndbg.commands.rep
 
 __version__ = pwndbg.version.__version__
 version = __version__
