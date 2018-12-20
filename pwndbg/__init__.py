@@ -54,6 +54,8 @@ import pwndbg.commands.vmmap
 import pwndbg.commands.windbg
 import pwndbg.commands.xinfo
 import pwndbg.commands.xor
+import pwndbg.commands.iofile
+import pwndbg.commands.rep
 import pwndbg.constants
 import pwndbg.disasm
 import pwndbg.disasm.arm
@@ -81,8 +83,6 @@ import pwndbg.vmmap
 import pwndbg.wrappers
 import pwndbg.wrappers.checksec
 import pwndbg.wrappers.readelf
-import pwndbg.commands.iofile
-import pwndbg.commands.rep
 
 __version__ = pwndbg.version.__version__
 version = __version__
