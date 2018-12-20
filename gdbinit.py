@@ -9,7 +9,6 @@ from os import path
 
 import six
 
-print("pu1p's pwndbg")
 directory, file = path.split(__file__)
 directory       = path.expanduser(directory)
 directory       = path.abspath(directory)
