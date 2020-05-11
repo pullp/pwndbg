@@ -332,48 +332,6 @@ def context_backtrace(frame_count=10, with_banner=True):
         frame_count -= 1
         if frame_count <= 0:
             break
-    
-    # bt_prefix = "%s" % B.config_prefix
-    # this_frame    = gdb.selected_frame()
-    # newest_frame  = this_frame
-    # oldest_frame  = this_frame
-
-    # for i in range(frame_count):
-    #     try:
-    #         candidate = oldest_frame.older()
-    #     except gdb.MemoryError:
-    #         break
-
-    #     if not candidate:
-    #         break
-    #     oldest_frame = candidate
-
-    # for i in range(frame_count):
-    #     candidate = newest_frame.newer()
-    #     if not candidate:
-    #         break
-    #     newest_frame = candidate
-
-    # frame = newest_frame
-    # i     = 0
-    # bt_prefix = "%s" % B.config_prefix
-    # while True:
-
-    #     prefix = bt_prefix if frame == this_frame else ' ' * len(bt_prefix)
-    #     prefix = " %s" % B.prefix(prefix)
-        # addrsz = B.address(pwndbg.ui.addrsz(frame.pc()))
-    #     symbol = B.symbol(pwndbg.symbol.get(frame.pc()))
-    #     if symbol:
-    #         addrsz = addrsz + ' ' + symbol
-    #     line   = map(str, (prefix, B.frame_label('%s%i' % (backtrace_frame_label, i)), addrsz))
-    #     line   = ' '.join(line)
-    #     result.append(line)
-
-    #     if frame == oldest_frame:
-    #         break
-
-    #     frame = frame.older()
-    #     i    += 1
     return result
 
 
