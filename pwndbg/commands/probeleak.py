@@ -129,6 +129,7 @@ def probeleak(address=None, count=0x40, max_distance=0x0, point_to=None, max_ptr
 
             find_cnt += 1
             if max_ptrs != 0 and find_cnt >= max_ptrs:
+
                 break
 
     if not found:
